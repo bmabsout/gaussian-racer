@@ -1,6 +1,7 @@
 # Build Folder
 dist/*
 !dist/index.html
+!dist/shaders/*
 
 # Direnv
 .direnv/*
