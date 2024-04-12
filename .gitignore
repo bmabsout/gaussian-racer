@@ -2,6 +2,9 @@
 dist/*
 !dist/index.html
 
+# Direnv
+.direnv/*
+
 # Logs
 logs
 *.log
