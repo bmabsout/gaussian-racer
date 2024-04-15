@@ -3,7 +3,8 @@ precision mediump float;
 #endif
 
 attribute vec3 aPosition;
-
+attribute vec2 aTexCoord;
+varying vec2 uv;
 // Always include this to get the position of the pixel and map the shader correctly onto the shape
 
 void main() {
@@ -16,4 +17,5 @@ void main() {
 
   // Send the vertex information on to the fragment shader
   gl_Position = positionVec4;
+  uv = vec2(aTexCoord.x, 1.0 - aTexCoord.y);
 }
