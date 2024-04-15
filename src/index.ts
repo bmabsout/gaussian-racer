@@ -21,7 +21,7 @@ type Gaussian = {
 
 const gaussians = [
   {mean: new Vector(0.0, 0.0), std: new Vector(.1, .1)},
-  {mean: new Vector(0.5, 0.5), std: new Vector(.1, .1)}
+  {mean: new Vector(0.1, 0.1), std: new Vector(.1, .1)}
 ]
 
 function gaussiansToData(gaussians: Gaussian[]): [number[][], number[][]] {
@@ -48,8 +48,6 @@ function drawShader() {
   theShader.setUniform('stds', stds as any)
   theShader.setUniform('n', gaussians.length)
   shader(theShader)
-  
-  
   rect(-width/2.0, -height/2.0, width, height)
 }
 

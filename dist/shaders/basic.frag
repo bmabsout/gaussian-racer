@@ -12,7 +12,7 @@ uniform sampler2D lower;
 
 float normal_pdf(vec2 xy, vec2 mean, vec2 std) {
   vec2 a = (xy - mean) / std;
-  return exp(-0.5 * dot(a, a)) / (std.x * std.y * 6.28318530718);
+  return exp(-0.5 * dot(a, a));
 }
 
 float all_the_normals(vec2 xy) {
@@ -24,7 +24,7 @@ float all_the_normals(vec2 xy) {
     sum += normal_pdf(xy, means[i], stds[i]);
   }
   //cap it at 1
-  //sum = min(sum/1.0, 1.0);
+  sum = min(sum, 1.0);
 
   return sum;
 }
@@ -37,6 +37,6 @@ void main() {
   // gl_FragColor = vec4(0.0,0.0, 0.0, all_the_normals(st));
   // gl_FragColor = vec4(stds[0], 0.0, 1.0);
   // gl_FragColor = vec4(vec3(all_the_normals(st)), 1.0)*texture2D(lower, uv);
-  gl_FragColor = vec4(vec3(all_the_normals(st))*texture2D(lower, uv).xyz, 1.0);
+  gl_FragColor = vec4(vec3(1.0 - all_the_normals(st))*texture2D(lower, uv).xyz, 1.0);
   // gl_FragColor = texture2D(lower, uv);
 }
