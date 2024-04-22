@@ -11,15 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.21",
-    "typescript": "^5.4.3",
-    "p5": "^1.9.2"
+    "mz-math": "^3.0.22",
+    "p5": "^1.9.2",
+    "threejs-math": "^0.147.0",
+    "type-plus": "^7.6.2",
+    "typescript": "^5.4.3"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
+    "@types/p5": "^1.7.6",
     "ts-loader": "^9.5.1",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4",
-    "@types/p5": "^1.7.6"
+    "webpack-dev-server": "^5.0.4"
   }
 }
